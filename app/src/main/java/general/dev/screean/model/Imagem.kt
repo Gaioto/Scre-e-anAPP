@@ -17,6 +17,10 @@ class Imagem {
     @Expose
     var imagem: String? = null
 
+    @SerializedName("exclusaoImagem")
+    @Expose
+    var excluida: Boolean? = null
+
     constructor(nome : String, imagem: String) {
         this.nome = nome
         this.imagem = imagem
