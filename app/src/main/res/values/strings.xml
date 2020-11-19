@@ -4,4 +4,7 @@
     <string name="msgErro404">Não foi possível acessar o banco de imagens no momento</string>
     <string name="msgRet200">Carregando imagens...</string>
     <string name="msgCadas200">Imagem cadastrada</string>
+    <string name="screeanTxt">S C R E [E] A N</string>
+    <string name="imagem_add_text">De um nome a sua imagem</string>
+    <string name="adicionartxt">Adicionar</string>
 </resources>

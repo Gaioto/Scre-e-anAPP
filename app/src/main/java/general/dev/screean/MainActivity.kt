@@ -1,7 +1,13 @@
 package general.dev.screean
 
+import android.Manifest
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.widget.ImageView
+import android.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import general.dev.screean.adapter.ScreeanAdapter
@@ -21,24 +27,24 @@ class MainActivity : AppCompatActivity() {
 
         val call = ScreeanRetrofit().imagemService().buscaImagens()
 
+        val add: ImageView = findViewById(R.id.add_image)
+        val sobre: ImageView = findViewById(R.id.sobreNos)
+
+        sobre.setOnClickListener(){
+
+        }
+
+        add.setOnClickListener(){
+            val adicionaIntent = Intent(this, AdicionaActivity::class.java)
+            startActivity(adicionaIntent)
+        }
+
         call.enqueue(object : Callback<List<Imagem>> {
             override fun onResponse(call: Call<List<Imagem>>, response: Response<List<Imagem>>) {
-                if(response.code() == 500){
-
-                }
-                if(response.code() == 404){
-
-                }
-                if(response.code() == 200){
-
                     var items = response.body()!!
-
                     inicializarRecyclerView(items)
-                }
             }
-            override fun onFailure(call: Call<List<Imagem>>, t: Throwable) {
-                var faill = t
-            }
+            override fun onFailure(call: Call<List<Imagem>>, t: Throwable) { }
         })
     }
 
@@ -47,9 +53,10 @@ class MainActivity : AppCompatActivity() {
         val linearLayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = linearLayoutManager
 
-        val adapter = ScreeanAdapter()
+        val adapter = ScreeanAdapter(this)
         adapter.items = list
 
         recyclerView.adapter = adapter
     }
+
 }

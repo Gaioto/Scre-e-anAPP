@@ -14,7 +14,7 @@ interface ImagemService {
     @GET("GetImagem/{id}")
     fun buscaImagem(@Path("id") id: Int) : Call<Imagem>
 
-    @POST("Imagens/PostImagem")
+    @POST("PostImagem")
     fun cadastraImagem(@Body imagem: Imagem) : Call<Imagem>
 
     @DELETE("DeleteImagem/{id}")

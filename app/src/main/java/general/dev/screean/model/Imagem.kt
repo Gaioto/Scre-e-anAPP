@@ -24,5 +24,6 @@ class Imagem {
     constructor(nome : String, imagem: String) {
         this.nome = nome
         this.imagem = imagem
+        this.excluida = false
     }
 }
