@@ -11,13 +11,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="686dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_screean"
             android:layout_width="match_parent"
-            android:layout_height="574dp"
+            android:layout_height="591dp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,16 +28,14 @@
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:gravity="center"
+            android:text="@string/teste"
+            android:fontFamily="monospace"
             android:textColor="@color/white"
-            android:text="TESTE"
-            android:textSize="24dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/image_screean" />
-
     </LinearLayout>
-
-
 
 </androidx.cardview.widget.CardView>

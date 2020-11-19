@@ -34,6 +34,7 @@ class ImageActivity : AppCompatActivity() {
         back.setOnClickListener(){
             val listIntent = Intent(this, MainActivity::class.java)
             startActivity(listIntent)
+            finish()
         }
 
         val call = ScreeanRetrofit().imagemService().buscaImagem(iId)

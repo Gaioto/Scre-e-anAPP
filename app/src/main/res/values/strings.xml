@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Screean</string>
+    <string name="app_name">SCRE[E]AN</string>
     <string name="msgErro500">Não foi possível acessar o banco de imagens</string>
     <string name="msgErro404">Não foi possível acessar o banco de imagens no momento</string>
     <string name="msgRet200">Carregando imagens...</string>
@@ -7,4 +7,5 @@
     <string name="screeanTxt">S C R E [E] A N</string>
     <string name="imagem_add_text">De um nome a sua imagem</string>
     <string name="adicionartxt">Adicionar</string>
+    <string name="teste">TESTE</string>
 </resources>

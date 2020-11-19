@@ -9,13 +9,14 @@ class SobreActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_sobre)
 
-        val back: ImageView = findViewById(R.id.toolbarImageSobre)
+        val back: ImageView = findViewById(R.id.backToListAdd)
 
         back.setOnClickListener(){
             val backIntent = Intent(this, MainActivity::class.java)
             startActivity(backIntent)
+            finish()
         }
 
     }
