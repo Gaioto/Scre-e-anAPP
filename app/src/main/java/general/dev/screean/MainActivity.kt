@@ -22,8 +22,6 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     lateinit var recyclerView: RecyclerView
-    lateinit var items: List<Imagem>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         val add: ImageView = findViewById(R.id.add_image)
         val sobre: ImageView = findViewById(R.id.sobreNos)
         val swipe: SwipeRefreshLayout = findViewById(R.id.swipeRefresh)
+        var empty: List<Imagem> = emptyList()
 
         buscaImagens()
 
@@ -47,9 +46,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         swipe.setOnRefreshListener {
-            inicializarRecyclerView(items)
+            inicializarRecyclerView(empty)
             buscaImagens()
-            Toast.makeText(this, "Atualizando...", Toast.LENGTH_SHORT).show()
             swipe.isRefreshing = false
         }
     }
@@ -59,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
         call.enqueue(object : Callback<List<Imagem>> {
             override fun onResponse(call: Call<List<Imagem>>, response: Response<List<Imagem>>) {
-                items = response.body()!!
+                val items = response.body()!!
                 inicializarRecyclerView(items)
             }
             override fun onFailure(call: Call<List<Imagem>>, t: Throwable) { }

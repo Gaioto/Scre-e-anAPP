@@ -2,11 +2,8 @@ package general.dev.screean.utils
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.util.Base64
 import java.io.ByteArrayOutputStream
-import java.net.URI
 
 
 fun bitmapToBase64(bitmap: Bitmap): String {
@@ -17,9 +14,7 @@ fun bitmapToBase64(bitmap: Bitmap): String {
 
     val imagemArray = byteArrayOutputStream.toByteArray()
 
-    val imagemBase64 = Base64.encodeToString(imagemArray, Base64.NO_WRAP)
-
-    return imagemBase64
+    return Base64.encodeToString(imagemArray, Base64.NO_WRAP)
 }
 
 fun base64ToBitmap(base64: String?): Bitmap {

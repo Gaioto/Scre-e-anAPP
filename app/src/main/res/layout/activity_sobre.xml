@@ -88,7 +88,7 @@
         android:layout_marginBottom="64dp"
         android:fontFamily="sans-serif-condensed-light"
         android:gravity="center_horizontal"
-        android:text="S C R E [E] A N \n An \n General Development Product"
+        android:text="S C R E [E] A M \n An \n General Development Product"
         android:textAlignment="center"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
